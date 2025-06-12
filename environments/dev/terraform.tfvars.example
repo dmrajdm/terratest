@@ -1,0 +1,31 @@
+region         = "us-east-1"
+cluster_name   = "dev-eks"
+cluster_version = "1.29"
+vpc_id         = "vpc-xxxx"
+subnet_ids     = ["subnet-a", "subnet-b"]
+route53_zone_id = "Z123456789"
+
+eks_managed_node_groups = {
+  default = {
+    min_size     = 1
+    max_size     = 3
+    desired_size = 1
+    instance_types = ["t3.medium"]
+  }
+}
+
+# cluster_addons = {
+#   coredns        = {}
+#   kube-proxy     = {}
+#   vpc-cni        = {}
+#   ebs-csi-driver = {}
+# }
+
+# cluster_autoscaler_helm_version = "9.29.3"
+# metrics_server_helm_version     = "3.11.0"
+
+# self_managed_node_groups = {}
+
+# tags = {
+#   Environment = "dev"
+# }

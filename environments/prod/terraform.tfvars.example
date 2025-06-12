@@ -1,0 +1,25 @@
+region         = "us-east-1"
+cluster_name   = "prod-eks"
+cluster_version = "1.29"
+vpc_id         = "vpc-zzzz"
+subnet_ids     = ["subnet-a", "subnet-b"]
+route53_zone_id = "Z555555555"
+
+eks_managed_node_groups = {
+  default = {
+    min_size     = 3
+    max_size     = 6
+    desired_size = 3
+    instance_types = ["t3.large"]
+  }
+}
+
+# cluster_addons = {
+#   coredns        = {}
+#   kube-proxy     = {}
+#   vpc-cni        = {}
+#   ebs-csi-driver = {}
+# }
+
+# cluster_autoscaler_helm_version = "9.29.3"
+# metrics_server_helm_version     = "3.11.0"
